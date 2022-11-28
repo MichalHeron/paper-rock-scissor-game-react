@@ -1,38 +1,342 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	position: relative;
+	text-align: center;
+	background: rgb(59, 76, 99);
+	background: radial-gradient(circle at top, rgba(59, 76, 99, 1) 0%, rgba(20, 21, 57, 1) 40%);
+	height: 100vh;
+	padding-top: 3rem;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	display: flex;
+	justify-content: space-between;
+	border: solid;
+	border-width: 0.1rem;
+	border-color: hsl(217, 16%, 45%);
+	border-radius: 0.5rem;
+	width: 85%;
+	margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.gameName {
+	color: white;
+	width: min-content;
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 1.5rem;
+	font-size: 1.8rem;
+	margin: 1.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.scoreBox {
+	background-color: white;
+	margin: 1rem;
+	padding: 0.5rem 2rem;
+	border-radius: 0.5rem;
+}
+
+.scoreBox > p {
+	font-size: 1rem;
+	color: hsl(229, 64%, 46%);
+}
+
+.score {
+	font-size: 2.5rem;
+	color: hsl(229, 25%, 31%);
+}
+
+.gameBox {
+	margin: 5rem auto;
+	width: 32rem;
+	height: 36rem;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.gameBoxBg {
+	background-image: url(./images/bg-triangle.svg);
+}
+.btnBorder {
+	position: relative;
+	display: block;
+	height: 12rem;
+	aspect-ratio: 1/1;
+	border-radius: 10rem;
+	box-shadow: 0px -0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+	-webkit-box-shadow: 0px -0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0px -0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+}
+.btnGame {
+	position: relative;
+	background-color: #1a2946;
+	width: 9rem;
+	aspect-ratio: 1/1;
+	border-radius: 9rem;
+	border: none;
+	background-position: center;
+	background-size: 50%;
+	background-repeat: no-repeat;
+	top: calc((12rem - 9rem) / 2);
+}
+.paperStartPos:hover,
+.scissorsStartPos:hover,
+.rockStartPos:hover {
+	transform: scale(105%);
+}
+.paperStartPos,
+.scissorsStartPos,
+.rockStartPos,
+.paperStartPos > .btnGame,
+.scissorsStartPos > .btnGame,
+.rockStartPos > .btnGame {
+	cursor: pointer;
+}
+
+.duelPos {
+	display: grid;
+	grid-template-columns: 12rem auto 12rem;
+	grid-template-rows: 12rem 5rem auto;
+}
+
+.myPickPos {
+	grid-column: 1/2;
+	grid-row: 1/2;
+}
+
+.enemyPos {
+	grid-column: 3/4;
+	grid-row: 1/2;
+}
+
+.enemy {
+	margin-top: 2rem;
+	margin-left: 1.5rem;
+	background-color: #1a2946;
+	height: 9rem;
+	aspect-ratio: 1/1;
+	border-radius: 9rem;
+}
+
+.youPicked,
+.theHousePicked {
+	text-transform: uppercase;
+	color: white;
+	padding-top: 2rem;
+}
+
+.youPicked {
+	grid-column: 1/2;
+	grid-row: 2/3;
+}
+
+.theHousePicked {
+	grid-column: 2/4;
+	grid-row: 2/3;
+	text-align: right;
+}
+
+.comebackBox {
+	grid-column: 1/4;
+	color: white;
+	text-transform: uppercase;
+	font-size: 5rem;
+	margin-top: 2rem;
+}
+
+.paperStartPos {
+	left: 0;
+}
+
+.paperBorder {
+	background-color: #5771f3;
+}
+
+.paper,
+.rock,
+.scissors {
+	background-color: white;
+	box-shadow: 0px 0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+	-webkit-box-shadow: 0px 0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+	-moz-box-shadow: 0px 0.4rem 0px 0px rgba(0, 0, 0, 0.2) inset;
+}
+
+.paper {
+	background-image: url(./images/icon-paper.svg);
+}
+
+.scissorsStartPos {
+	top: -12rem;
+	left: calc(100% - 12rem);
+}
+
+.scissorsBorder {
+	background-color: #eda31c;
+}
+
+.scissors {
+	background-image: url(./images/icon-scissors.svg);
+}
+
+.rockStartPos {
+	top: -4rem;
+	left: calc(50% - 6rem);
+}
+.rockBorder {
+	background-color: #e0405d;
+}
+
+.rock {
+	background-image: url(./images/icon-rock.svg);
+}
+
+.btn {
+	border: solid;
+	border-color: white;
+	cursor: pointer;
+	border-width: 0.15rem;
+	text-transform: uppercase;
+}
+
+.btnAgain {
+	width: 20rem;
+	aspect-ratio: 4/1;
+	border-radius: 1rem;
+	color: black;
+	background-color: white;
+}
+
+.btn:hover,
+.btnClose:hover {
+	transform: scale(110%);
+}
+
+.btnRules {
+	aspect-ratio: 3/1;
+	color: white;
+	background-color: transparent;
+	width: 10rem;
+	border-radius: 0.5rem;
+}
+
+.rulesBox {
+	background-color: white;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	padding-top: 10rem;
+	text-transform: uppercase;
+	font-size: 3rem;
+	font-weight: bold;
+	background-color: white;
+}
+
+.rulesImg {
+	background-image: url(./images/image-rules.svg);
+	margin: 0 auto;
+	width: 32rem;
+	aspect-ratio: 1/1;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.btnClose {
+	margin: 8rem auto;
+	background-image: url(./images/icon-close.svg);
+	width: 5rem;
+	aspect-ratio: 1/1;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+/* ### Primary
+
+- Scissors Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%)
+- Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
+- Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
+- Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
+- Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%) */
+@media (min-width: 768px) {
+	.App-header {
+		width: 50%;
+	}
+	.btnRules {
+		display: block;
+		margin-right: 7rem;
+		margin-left: auto;
+	}
+	.gameBox {
+		margin-bottom: 0;
+	}
+	.duelPos {
+		width: min-content;
+		grid-template-columns: 12rem min-content 12rem;
+		grid-template-rows: 7rem 5rem 12rem 9rem;
+	}
+	.comebackBox {
+		grid-column: 2/3;
+		grid-row: 2/3;
+	}
+	.youPicked,
+	.theHousePicked {
+		padding: 0;
+		margin-top: -2rem;
+	}
+	.youPicked {
+		grid-column: 1/2;
+		grid-row: 2/3;
+	}
+	.theHousePicked {
+		grid-column: 2/4;
+		grid-row: 2/3;
+		text-align: right;
+	}
+	.myPickPos {
+		grid-column: 1/2;
+		grid-row: 3/4;
+		transform: scale(140%);
+	}
+	.enemyPos {
+		grid-column: 3/4;
+		grid-row: 3/4;
+		transform: scale(140%);
+	}
+	.comebackBox {
+		grid-column: 2/3;
+		grid-row: 3/4;
+		font-size: 3rem;
+		margin: 1rem 6rem;
+	}
+	.btnAgain {
+		width: 15rem;
+		border-radius: 0.5rem;
+	}
+	.rulesBox {
+		position: absolute;
+		margin: 0 auto;
+		left: 50%;
+		top: 10%;
+		transform: translate(-50%);
+		height: 370px;
+		width: 370px;
+		padding-top: 1rem;
+		border-radius: 1rem;
+	}
+	.rulesBox > p {
+		text-align: left;
+		margin-left: 2rem;
+	}
+	.btnClose {
+		position: absolute;
+		margin: 0;
+		top: 0;
+		right: 0;
+	}
+	.hero {
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.4);
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+	}
 }
