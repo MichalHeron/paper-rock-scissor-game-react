@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/paper-rock-scissor-game-react/static/css/main.fb5fc6e7.css",
+    "main.js": "/paper-rock-scissor-game-react/static/js/main.4ad1dd49.js",
+    "static/js/787.c8ffd4a8.chunk.js": "/paper-rock-scissor-game-react/static/js/787.c8ffd4a8.chunk.js",
+    "static/media/image-rules.svg": "/paper-rock-scissor-game-react/static/media/image-rules.258b753fb6284dc8ae00.svg",
+    "static/media/icon-paper.svg": "/paper-rock-scissor-game-react/static/media/icon-paper.8b57a6b108c1b8ae8293.svg",
+    "index.html": "/paper-rock-scissor-game-react/index.html",
+    "static/media/icon-scissors.svg": "/paper-rock-scissor-game-react/static/media/icon-scissors.3b1a5d7eb0b2f1fd3e95.svg",
+    "static/media/icon-rock.svg": "/paper-rock-scissor-game-react/static/media/icon-rock.476e90a9646a87bb3645.svg",
+    "static/media/icon-close.svg": "/paper-rock-scissor-game-react/static/media/icon-close.bde602ecd1a4e55e0c27.svg",
+    "static/media/bg-triangle.svg": "/paper-rock-scissor-game-react/static/media/bg-triangle.77c6ca418d3751d8f717.svg",
+    "main.fb5fc6e7.css.map": "/paper-rock-scissor-game-react/static/css/main.fb5fc6e7.css.map",
+    "main.4ad1dd49.js.map": "/paper-rock-scissor-game-react/static/js/main.4ad1dd49.js.map",
+    "787.c8ffd4a8.chunk.js.map": "/paper-rock-scissor-game-react/static/js/787.c8ffd4a8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb5fc6e7.css",
+    "static/js/main.4ad1dd49.js"
+  ]
+}
